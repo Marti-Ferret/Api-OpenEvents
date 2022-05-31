@@ -23,10 +23,10 @@ app.use(helmet());
 app.use(express.json())  // convierte el body (bytes) -> objeto json
 
 app.use("/users" , usersRoute)
-//app.use("/events" , eventsRoute)
-//app.use("/assistances" , assistancesRoute)
-//app.use("/messages", messagesRoute)
-//app.use("/friends", friendsRoute)
+app.use("/events" , eventsRoute)
+app.use("/assistances" , assistancesRoute)
+app.use("/messages", messagesRoute)
+app.use("/friends", friendsRoute)
 app.use("/auth" , authRoute)
 
 

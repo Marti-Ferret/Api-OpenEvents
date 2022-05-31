@@ -20,7 +20,7 @@ class GenericDAO {
         if (!req.headers.authorization) return 0
     
         const token = req.headers.authorization.split(" ")[1];
-    
+        
         if (!token) return 0
     
         const jwt = require('jsonwebtoken');

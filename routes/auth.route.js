@@ -6,16 +6,18 @@ const udao = new UsersDao()
 
 router.post("/", async (req, res, next) => {
     const users = await udao.getAll()
-    const { user, pass } = req.body
+    const { username, pass } = req.body
     console.log(req.body)
 
-    if( users.find(usuari => usuari.email === user && usuari.password === pass)){
-        
+    const user = users.find(user => user.email === username && user.password === pass)
+
+    if(user){
+        if (user.password === password) {
         const jwt = require("jsonwebtoken")
         const token = jwt.sign({
             id: user.id,
             username: user.email,
-            password: user.password
+            password: user.password,
         },
         process.env.JWT_KEY)
 
@@ -25,7 +27,7 @@ router.post("/", async (req, res, next) => {
         res.json("Invalid user")
     }
 
-
+    }
 })
 
 
