@@ -1,3 +1,3 @@
 ﻿# Api-OpenEvents
 
-API con node.js, expres.js i BBDD (PlanetScale).
+API con node.js i PlanetScale como BBDD.
